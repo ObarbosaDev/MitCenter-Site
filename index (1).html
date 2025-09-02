@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+
         :root {
             --primary-black: #1a1a1a;
             --accent-red: #dc2626;
@@ -28,523 +29,552 @@
             color: var(--primary-black);
         }
 
-        /* Navigation */
-        .navbar-custom {
-            background: var(--primary-black) !important;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--pure-white) !important;
-        }
-
-        .navbar-brand .accent {
-            color: var(--accent-red);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--pure-white) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--accent-red) !important;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
-            color: var(--pure-white);
-            padding: 120px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('/placeholder.svg?height=600&width=1200') center/cover;
-            opacity: 0.1;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero .accent {
-            color: var(--accent-red);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-custom {
-            background: var(--accent-red);
-            color: var(--pure-white);
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-        }
-
-        .btn-custom:hover {
-            background: #b91c1c;
-            color: var(--pure-white);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
-        }
-
-        /* Added unit info card styles similar to High Torque */
-        .unit-info-card {
-            background: var(--pure-white);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            margin-top: -50px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .unit-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-black);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .unit-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .unit-info-item {
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-        }
-
-        .unit-info-item i {
-            color: var(--accent-red);
-            font-size: 1.2rem;
-            margin-right: 1rem;
-            width: 20px;
-        }
-
-        .unit-info-item strong {
-            color: var(--primary-black);
-        }
-
-        .btn-appointment-large {
-            background: var(--accent-red);
-            color: var(--pure-white);
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-appointment-large:hover {
-            background: #b91c1c;
-            color: var(--pure-white);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
-        }
-
-        /* Section Styling */
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-        }
-
-        .section-title .accent {
-            color: var(--accent-red);
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-card {
-            background: var(--pure-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-red);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--pure-white);
-            font-size: 2rem;
-        }
-
-        /* Improved services section layout */
-        .services {
-            background: var(--light-gray);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .service-item:last-child {
-            border-bottom: none;
-        }
-
-        .service-item i {
-            color: var(--accent-red);
-            font-size: 1.2rem;
-            margin-right: 1rem;
-            margin-top: 0.2rem;
-            width: 20px;
-        }
-
-        .service-item h5 {
-            font-weight: 600;
-            color: var(--primary-black);
-            margin-bottom: 0.5rem;
-        }
-
-        .service-item p {
-            color: #666;
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        .service-card {
-            background: var(--pure-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-        }
-
-        /* Added more info section with dark background */
-        .more-info {
-            background: var(--primary-black);
-            color: var(--pure-white);
-            padding: 60px 0;
-        }
-
-        .more-info h3 {
-            color: var(--accent-red);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .more-info p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Gallery Section */
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(220, 38, 38, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: var(--pure-white);
-            font-size: 2rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--primary-black);
-            color: var(--pure-white);
-        }
-
-        .contact-info {
-            background: var(--dark-gray);
-            padding: 2rem;
-            border-radius: 15px;
-            height: 100%;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            color: var(--accent-red);
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            width: 30px;
-        }
-
-        .form-control {
-            background: var(--dark-gray);
-            border: 1px solid #444;
-            color: var(--pure-white);
-            border-radius: 10px;
-            padding: 12px 15px;
-        }
-
-        .form-control:focus {
-            background: var(--dark-gray);
-            border-color: var(--accent-red);
-            color: var(--pure-white);
-            box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.25);
-        }
-
-        .form-control::placeholder {
-            color: #aaa;
-        }
-
-        /* Enhanced footer with organized links */
-        .footer {
-            background: var(--primary-black);
-            color: var(--pure-white);
-            padding: 3rem 0 1rem;
-            border-top: 1px solid #333;
-        }
-
-        .footer-section h5 {
-            color: var(--accent-red);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-red);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            margin-top: 2rem;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .unit-info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+/* Barra de Navegação */
+.navbar-custom {
+    background: var(--primary-black) !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Marca - agora apenas com logo */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    padding: 0;
+}
+
+/* Logo dentro da barra de navegação */
+.navbar-brand img {
+    height: 70px;   /* aumente o tamanho da logo para ficar mais visível */
+    width: auto;
+    display: block;
+}
+
+/* Links do menu */
+.navbar-nav .nav-link {
+    color: var(--pure-white) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-red) !important;
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+    color: var(--pure-white);
+    padding: 120px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagem de fundo suave (apenas textura) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/placeholder.svg?height=600&width=1200') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Título principal */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero .accent {
+    color: var(--accent-red);
+}
+
+/* Texto descritivo */
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Botão do WhatsApp */
+.btn-custom {
+    background: var(--accent-red);
+    color: var(--pure-white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-custom:hover {
+    background: #b91c1c;
+    color: var(--pure-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+/* Imagem da oficina na Hero */
+.hero-img {
+    border-radius: 15px; /* cantos arredondados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35); /* sombra envolvente */
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2; /* garante que a imagem fique acima do ::before */
+}
+
+.hero-img:hover {
+    transform: scale(1.03); /* leve zoom ao passar o mouse */
+}
+
+/* Card de informações */
+.unit-info-card {
+    background: var(--pure-white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 3;
+}
+
+.unit-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.unit-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.unit-info-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.unit-info-item i {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    width: 20px;
+}
+
+.unit-info-item strong {
+    color: var(--primary-black);
+}
+
+.btn-appointment-large {
+    background: var(--accent-red);
+    color: var(--pure-white);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-appointment-large:hover {
+    background: #b91c1c;
+    color: var(--pure-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+/* Estilo das Seções */
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 1rem;
+}
+
+.section-title .accent {
+    color: var(--accent-red);
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Seção Sobre Nós */
+.about-card {
+    background: var(--pure-white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--pure-white);
+    font-size: 2rem;
+}
+
+/* Seção Serviços - Layout melhorado */
+.services {
+    background: var(--light-gray);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-item i {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    width: 20px;
+}
+
+.service-item h5 {
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.service-card {
+    background: var(--pure-white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+/* Seção Informações Adicionais - fundo escuro */
+.more-info {
+    background: var(--primary-black);
+    color: var(--pure-white);
+    padding: 60px 0;
+}
+
+.more-info h3 {
+    color: var(--accent-red);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.more-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* Seção Galeria */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(220, 38, 38, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: var(--pure-white);
+    font-size: 2rem;
+}
+
+/* Seção Contato */
+.contact {
+    background: var(--primary-black);
+    color: var(--pure-white);
+}
+
+.contact-info {
+    background: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+    color: var(--accent-red);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 30px;
+}
+
+.form-control {
+    background: var(--dark-gray);
+    border: 1px solid #444;
+    color: var(--pure-white);
+    border-radius: 10px;
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    background: var(--dark-gray);
+    border-color: var(--accent-red);
+    color: var(--pure-white);
+    box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.25);
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+/* Rodapé com links organizados */
+.footer {
+    background: var(--primary-black);
+    color: var(--pure-white);
+    padding: 3rem 0 1rem;
+    border-top: 1px solid #333;
+}
+
+.footer-section h5 {
+    color: var(--accent-red);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent-red);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+/* Animações */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .unit-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
-     Navigation 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                Mit<span class="accent">Center</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre Nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Galeria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#location">Localização</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#appointment">Agendamento</a>
-                    </li>
-                </ul>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <!-- Logo como imagem -->
+    <a class="navbar-brand" href="#home">
+      <img src="logo.png" alt="MitCenter 4x4" class="logo.png">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">Sobre Nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Serviços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Galeria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#location">Localização</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#appointment">Agendamento</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Seção Hero -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Conteúdo de texto -->
+            <div class="col-lg-6 hero-content">
+                <h1 class="fade-in">
+                    Seu PIT STOP <span class="accent">Mitsubishi</span> de alta performance!
+                </h1>
+                <p class="fade-in">
+                    Junte-se aos que confiam em nossa experiência, +10 anos! Somos uma oficina especializada em veículos Mitsubishi, prontos para oferecer atendimento técnico, confiável e personalizado para o seu carro.
+                </p>
+                <a href="https://wa.me/556194662166?text=Olá! Gostaria de agendar um serviço na MitCenter" 
+                   class="btn-custom fade-in" target="_blank">
+                    <i class="fab fa-whatsapp me-2"></i>
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+
+            <!-- Imagem da oficina -->
+            <div class="col-lg-6 text-center">
+                <img src="oficina.jpg" 
+                     alt="MitCenter Workshop" 
+                     class="img-fluid rounded shadow-lg fade-in hero-img">
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-     Hero Section 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1 class="fade-in">
-                        Seu PIT STOP <span class="accent">Mitsubishi</span> de alta performance!
-                    </h1>
-                    <p class="fade-in">
-                        Junte-se aos que confiam em nossa experiência, +10 anos! Somos uma oficina especializada em veículos Mitsubishi, prontos para oferecer atendimento técnico, confiável e personalizado para o seu carro.
-                    </p>
-                    <a href="https://wa.me/5561999999999?text=Olá! Gostaria de agendar um serviço na MitCenter" class="btn-custom fade-in" target="_blank">
-                        <i class="fab fa-whatsapp me-2"></i>
-                        Agendar pelo WhatsApp
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="/placeholder.svg?height=400&width=600" 
-                         alt="MitCenter Workshop" class="img-fluid rounded fade-in">
-                </div>
-            </div>
-        </div>
-    </section>
-
-     Added unit info card section 
     <section class="py-0">
         <div class="container">
             <div class="unit-info-card fade-in">
@@ -814,348 +844,416 @@
         </div>
     </section>
 
-     Contact & Location Section 
-    <section id="contact" class="contact section-padding">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2 style="color: white;">Entre em <span class="accent">Contato</span></h2>
-                <p style="color: #ccc;">🚗 Seu Mitsubishi em boas mãos</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="contact-info fade-in">
-                        <h3 class="mb-4">Informações de Contato</h3>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Endereço:</strong><br>
-                                📍 Localizados na Ceilândia Sul – Brasília<br>
-                                Distrito Federal
-                            </div>
+<!-- Seção de Contato e Localização -->
+<section id="contact" class="contact section-padding">
+    <div class="container">
+        <!-- Título da seção -->
+        <div class="section-title fade-in">
+            <h2 style="color: white;">Entre em <span class="accent">Contato</span></h2>
+            <p style="color: #ccc;">Seu carro em boas mãos</p> 
+        </div>
+        <div class="row">
+            <!-- Coluna com informações de contato -->
+            <div class="col-lg-6 mb-4">
+                <div class="contact-info fade-in">
+                    <h3 class="mb-4">Informações de Contato</h3>
+
+                    <!-- Endereço -->
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            Localizados na Ceilândia Sul – Brasília<br> 
+                            Distrito Federal
                         </div>
-                        <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <strong>WhatsApp:</strong><br>
-                                📲 (61) 99999-9999<br>
-                                Agendamentos pelo WhatsApp!
-                            </div>
+                    </div>
+
+                    <!-- WhatsApp com link direto -->
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp:</strong><br>
+                            <a href="https://wa.me/556194662166" target="_blank">(61) 9 9466-2166</a><br> 
+                            Agendamentos pelo WhatsApp!
                         </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <div>
-                                <strong>Instagram:</strong><br>
-                                @mitcenter_oficial<br>
-                                Siga nosso perfil para dicas e promoções!
-                            </div>
+                    </div>
+
+                    <!-- Instagram com link direto -->
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <strong>Instagram:</strong><br>
+                            <a href="https://instagram.com/mitcenter_oficial" target="_blank">@mitcenter_oficial</a><br>
+                            Siga nosso perfil para mais novidades! 
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Horário de Funcionamento:</strong><br>
-                                Segunda a Sexta: 8h às 18h<br>
-                                Sábado: 8h às 12h
-                            </div>
+                    </div>
+
+                    <!-- Horário de Funcionamento -->
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horário de Funcionamento:</strong><br>
+                            Segunda a Sexta: 8h às 18h<br>
+                            Sábado: 8h às 12h30
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <form class="fade-in" id="contactForm">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Seu Nome" required>
+            </div>
+
+            <!-- Coluna com formulário de contato -->
+            <div class="col-lg-6">
+                <form class="fade-in" id="contactForm">
+                    <!-- Campo Nome -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nome" placeholder="Seu Nome" required>
+                    </div>
+
+                    <!-- Campo E-mail -->
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Seu E-mail" required>
+                    </div>
+
+                    <!-- Campo WhatsApp do cliente -->
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" id="telefone" placeholder="Seu WhatsApp" required>
+                    </div>
+
+                    <!-- Seleção de Serviço -->
+                    <div class="mb-3">
+                        <select class="form-control" id="servico" required>
+                            <option value="">Selecione o Serviço</option>
+                            <option value="Reparo de Câmbio">Reparo de Câmbio</option>
+                            <option value="Manutenção Mitsubishi">Manutenção Mitsubishi</option>
+                            <option value="Diagnóstico">Diagnóstico</option>
+                            <option value="Peças Originais">Peças Originais</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo Mensagem -->
+                    <div class="mb-3">
+                        <textarea class="form-control" id="mensagem" rows="4" placeholder="Descreva seu problema ou dúvida" required></textarea>
+                    </div>
+
+                    <!-- Botão Enviar via WhatsApp -->
+                    <button type="submit" class="btn-custom w-100">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        Enviar via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script para capturar os dados e enviar para o WhatsApp -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede que a página recarregue
+
+    // Pega os valores preenchidos no formulário
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let telefone = document.getElementById("telefone").value;
+    let servico = document.getElementById("servico").value;
+    let mensagem = document.getElementById("mensagem").value;
+
+    // Cria a mensagem formatada para enviar no WhatsApp
+    let texto = `Novo contato pelo site!%0A%0A👤 Nome: ${nome}%0A📧 E-mail: ${email}%0A📱 WhatsApp: ${telefone}%0A🔧 Serviço: ${servico}%0A💬 Mensagem: ${mensagem}`;
+
+    // Número de destino (seu WhatsApp)
+    let numero = "556194662166";
+
+    // Abre o WhatsApp com a mensagem pronta
+    window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
+});
+</script>
+
+<!-- Seção de Localização -->
+<section id="location" class="section-padding">
+  <div class="container">
+    <!-- Título da seção -->
+    <div class="section-title fade-in">
+      <h2>Nossa <span class="accent">Localização</span></h2>
+      <p>MitCenter – Ceilândia Sul – Brasília, DF</p>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="fade-in">
+          <!-- Mapa incorporado do endereço exato -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.064183294883!2d-48.096718!3d-15.837342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd31897f36bb%3A0x4710938ef7722a7!2sMitCenter%20-%20Oficina%20Especializada%20Mitsubishi!5e0!3m2!1spt-BR!2sbr!4v1693680000000!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 15px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Agendamento -->
+<section id="appointment" class="services section-padding">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Agendamento de <span class="accent">Serviços</span></h2>
+            <p>Agende seu horário de forma rápida e prática</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="service-card fade-in">
+                    
+                    <!-- Formulário de Agendamento -->
+                    <form id="appointmentForm">
+                        <!-- Linha com Nome e Telefone -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" id="nome" class="form-control" placeholder="Nome Completo" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" id="telefone" class="form-control" placeholder="Telefone" required>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Seu E-mail" required>
+
+                        <!-- Linha com E-mail e Modelo do Veículo -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="email" id="email" class="form-control" placeholder="E-mail" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" id="veiculo" class="form-control" placeholder="Modelo do Veículo" required>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="tel" class="form-control" placeholder="Seu WhatsApp" required>
+
+                        <!-- Linha com Data e Horário -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="date" id="data" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <select id="hora" class="form-control" required>
+                                    <option value="">Horário Preferido</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                </select>
+                            </div>
                         </div>
+
+                        <!-- Tipo de serviço -->
                         <div class="mb-3">
-                            <select class="form-control" required>
-                                <option value="">Selecione o Serviço</option>
-                                <option value="cambio">Reparo de Câmbio</option>
-                                <option value="manutencao">Manutenção Mitsubishi</option>
-                                <option value="diagnostico">Diagnóstico</option>
-                                <option value="pecas">Peças Originais</option>
+                            <select id="servico" class="form-control" required>
+                                <option value="">Tipo de Serviço</option>
+                                <option value="Reparo de Câmbio">Reparo de Câmbio</option>
+                                <option value="Manutenção Preventiva">Manutenção Preventiva</option>
+                                <option value="Diagnóstico">Diagnóstico</option>
+                                <option value="Revisão Completa">Revisão Completa</option>
+                                <option value="Troca de Peças">Troca de Peças</option>
                             </select>
                         </div>
+
+                        <!-- Observações -->
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Descreva seu problema ou dúvida" required></textarea>
+                            <textarea id="mensagem" class="form-control" rows="3" placeholder="Descreva o problema ou serviço desejado"></textarea>
                         </div>
+
+                        <!-- Botão de envio -->
                         <button type="submit" class="btn-custom w-100">
-                            <i class="fab fa-whatsapp me-2"></i>
-                            Enviar via WhatsApp
+                            <i class="fas fa-calendar-check me-2"></i>
+                            Confirmar Agendamento via WhatsApp
                         </button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-     Location Section 
-    <section id="location" class="section-padding">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Nossa <span class="accent">Localização</span></h2>
-                <p>📍 Ceilândia Sul - Brasília, DF</p>
+<script>
+    // Captura o envio do formulário
+    document.getElementById("appointmentForm").addEventListener("submit", function(event){
+        event.preventDefault(); // Impede envio padrão do formulário
+
+        // Coleta os valores do formulário
+        const nome = document.getElementById("nome").value;
+        const telefone = document.getElementById("telefone").value;
+        const email = document.getElementById("email").value;
+        const veiculo = document.getElementById("veiculo").value;
+        const data = document.getElementById("data").value;
+        const hora = document.getElementById("hora").value;
+        const servico = document.getElementById("servico").value;
+        const mensagemExtra = document.getElementById("mensagem").value;
+
+        // Número do WhatsApp da oficina (com DDI + DDD)
+        const numeroWhatsApp = "556194662166";
+
+        // Monta a mensagem que será enviada
+        const mensagem = `📅 *Novo Agendamento*\n\n👤 Nome: ${nome}\n📞 Telefone: ${telefone}\n📧 E-mail: ${email}\n🚗 Veículo: ${veiculo}\n📅 Data: ${data}\n⏰ Horário: ${hora}\n🛠️ Serviço: ${servico}\n📝 Observações: ${mensagemExtra}`;
+
+        // Gera o link do WhatsApp
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+        // Abre o WhatsApp com a mensagem pronta
+        window.open(url, "_blank");
+    });
+</script>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="footer-section">
+                    <h5>MitCenter</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre a MitCenter</a></li>
+                        <li><a href="#services">Nossos Serviços</a></li>
+                        <li><a href="#gallery">Trabalhos Realizados</a></li>
+                        <li><a href="#contact">Fale Conosco</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="fade-in">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61200.29447556!2d-48.1781394!3d-15.8267386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2c8b5b7d1f1d%3A0x8b5b7d1f1d8b5b7d!2sCeil%C3%A2ndia%20Sul%2C%20Ceil%C3%A2ndia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                            width="100%" 
-                            height="400" 
-                            style="border:0; border-radius: 15px;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
+        </div>
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>&copy; 2025 MitCenter. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <!-- Instagram atualizado -->
+                        <a href="https://instagram.com/mitcenter_oficial" target="_blank" class="text-white me-3">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- WhatsApp atualizado -->
+                        <a href="https://wa.me/556194662166" target="_blank" class="text-white">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-     Appointment Section 
-    <section id="appointment" class="services section-padding">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Agendamento de <span class="accent">Serviços</span></h2>
-                <p>Agende seu horário de forma rápida e prática</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="service-card fade-in">
-                        <form id="appointmentForm">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" placeholder="Nome Completo" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="tel" class="form-control" placeholder="Telefone" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="email" class="form-control" placeholder="E-mail" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" placeholder="Modelo do Veículo" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="date" class="form-control" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <select class="form-control" required>
-                                        <option value="">Horário Preferido</option>
-                                        <option value="08:00">08:00</option>
-                                        <option value="09:00">09:00</option>
-                                        <option value="10:00">10:00</option>
-                                        <option value="11:00">11:00</option>
-                                        <option value="14:00">14:00</option>
-                                        <option value="15:00">15:00</option>
-                                        <option value="16:00">16:00</option>
-                                        <option value="17:00">17:00</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select class="form-control" required>
-                                    <option value="">Tipo de Serviço</option>
-                                    <option value="cambio">Reparo de Câmbio</option>
-                                    <option value="manutencao">Manutenção Preventiva</option>
-                                    <option value="diagnostico">Diagnóstico</option>
-                                    <option value="revisao">Revisão Completa</option>
-                                    <option value="pecas">Troca de Peças</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="3" placeholder="Descreva o problema ou serviço desejado"></textarea>
-                            </div>
-                            <button type="submit" class="btn-custom w-100">
-                                <i class="fas fa-calendar-check me-2"></i>
-                                Confirmar Agendamento
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Comentários:
+- Mantido o layout original do rodapé.
+- Botão do Facebook removido conforme solicitado.
+- Instagram atualizado para: https://instagram.com/mitcenter_oficial
+- WhatsApp atualizado para: https://wa.me/556194662166
+-->
 
-     Enhanced footer with organized sections 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer-section">
-                        <h5>MitCenter Group</h5>
-                        <ul class="footer-links">
-                            <li><a href="#about">Sobre a MitCenter</a></li>
-                            <li><a href="#services">Nossos Serviços</a></li>
-                            <li><a href="#gallery">Trabalhos Realizados</a></li>
-                            <li><a href="#contact">Fale Conosco</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer-section">
-                        <h5>Institucional</h5>
-                        <ul class="footer-links">
-                            <li><a href="#">Política de Privacidade</a></li>
-                            <li><a href="#">Termos de Uso</a></li>
-                            <li><a href="#">Trabalhe Conosco</a></li>
-                            <li><a href="#">Seja um Parceiro</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer-section">
-                        <h5>Serviços</h5>
-                        <ul class="footer-links">
-                            <li><a href="#">Diagnóstico Automotivo</a></li>
-                            <li><a href="#">Reparo de Câmbio</a></li>
-                            <li><a href="#">Manutenção Mitsubishi</a></li>
-                            <li><a href="#">Peças Originais</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer-section">
-                        <h5>Atendimento</h5>
-                        <ul class="footer-links">
-                            <li><a href="#">Política de Atendimento</a></li>
-                            <li><a href="#">Garantia de Serviços</a></li>
-                            <li><a href="#">Agendamento Online</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p>&copy; 2024 MitCenter. Todos os direitos reservados.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <div class="social-links">
-                            <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
 
-     Scripts 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Form submissions
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Rolagem suave para links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            this.reset();
-        });
-
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Agendamento realizado com sucesso! Confirmaremos por telefone.');
-            this.reset();
-        });
-
-        // Gallery lightbox effect
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                const modal = document.createElement('div');
-                modal.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0,0,0,0.9);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 9999;
-                    cursor: pointer;
-                `;
-                
-                const modalImg = document.createElement('img');
-                modalImg.src = img.src;
-                modalImg.style.cssText = `
-                    max-width: 90%;
-                    max-height: 90%;
-                    border-radius: 10px;
-                `;
-                
-                modal.appendChild(modalImg);
-                document.body.appendChild(modal);
-                
-                modal.addEventListener('click', () => {
-                    document.body.removeChild(modal);
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            });
+            }
         });
+    });
 
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    // Animação de fade ao rolar a página
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Submissão dos formulários
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+        this.reset();
+    });
+
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Agendamento realizado com sucesso! Confirmaremos por telefone.');
+        this.reset();
+    });
+
+    // Efeito de lightbox na galeria
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                cursor: pointer;
+            `;
             
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
+            const modalImg = document.createElement('img');
+            modalImg.src = img.src;
+            modalImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 10px;
+            `;
             
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+            modal.appendChild(modalImg);
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', () => {
+                document.body.removeChild(modal);
             });
         });
-    </script>
+    });
+
+    // Destaque do link ativo na navegação
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 </body>
 </html>
